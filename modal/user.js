@@ -13,6 +13,7 @@ const userSchema = new Schema({
     },
     email:{
         type:String,
+        unique: true,
         required
     },
     age:{
@@ -21,8 +22,7 @@ const userSchema = new Schema({
         min:1
     },
     password:{
-        type: String,
-        required
+        type: String, 
     },
     resetKey:{
         type: String,

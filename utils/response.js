@@ -11,7 +11,7 @@ const status200 = (res,data, message = 'Request Process successfuly')=>{
     })
 }
 
-const status400 = (req, error,message="Something went worng while processing the request") => {
+const status400 = (res, error,message="Something went worng while processing the request") => {
     res.status(400)
     return res.send({
         status:400,

@@ -21,9 +21,9 @@ app.listen(8000,(err)=>{
         return false;
     }
     console.log('Listing on port 8000');
-    // connect(dbUrl).then(()=>{
-    //     console.log('Connected to the database');
-    // }).catch(err=>{
-    //     console.log('Error while connecting to the database',err);
-    // })
+    connect(dbUrl).then(()=>{
+        console.log('Connected to the database');
+    }).catch(err=>{
+        console.log('Error while connecting to the database',err);
+    })
 })
