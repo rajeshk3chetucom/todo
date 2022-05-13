@@ -1,7 +1,7 @@
 const userModal = require('../modal/user');
 const Joi = require('joi');
 const { status400, status200, status501 } = require('../utils/response');
-const { SignUpValidator } = require('../validator/user');
+const { SignUpValidator,LoginValidator } = require('../validator/user');
 const { encryptPass, matchPassword } = require('../utils/encript');
 const {v4} = require('uuid');
 module.exports.signUp =  async (req,res,next)=>{ 
