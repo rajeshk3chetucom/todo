@@ -4,6 +4,7 @@ const dbUrl = 'mongodb+srv://shubhaml:chetu123@cluster0.nb04r.mongodb.net/todoap
 const bodyParser = require('body-parser');
 
 const AuthRouter = require('./routes/auth');
+const WorkRouter = require('./routes/work')
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use('/auth', AuthRouter);
+app.use('/work',WorkRouter)
 
 // Initial Setup
 app.listen(8000,(err)=>{

@@ -4,6 +4,7 @@ const { status400, status200, status501 } = require('../utils/response');
 const { SignUpValidator,LoginValidator } = require('../validator/user');
 const { encryptPass, matchPassword } = require('../utils/encript');
 const {v4} = require('uuid');
+const { signToken } = require('../utils/jwt');
 module.exports.signUp =  async (req,res,next)=>{ 
 try {
 
@@ -45,7 +46,9 @@ module.exports.Login = async (req,res,next) =>{
     if(!passwordMatched) return status400(res,{message:'Invalid username or password'}, 'Invalid username or password');
 
     // if matched token refresh token 
-    const token = v4();
+    // const token = v4();
+    const token = signToken({id:user._id, firstName:user.firstName ,
+    "lastName": user.lastName, email:user.email});
 
     status200(res,{token},'Login Successfully! ')
 
