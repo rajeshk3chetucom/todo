@@ -9,6 +9,15 @@ module.exports.signToken = (value={})=>{
         response.error = error 
     }
     return response;
+}
 
 
+module.exports.verifyToken = async(token)=>{
+    try {
+        const verify = await JWT.verify(token,privateKey);
+        return verify;
+    } catch (error) {
+        console.log('Error while verifying the Token.', error)
+        return false 
+    }
 }

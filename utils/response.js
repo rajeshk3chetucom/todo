@@ -21,6 +21,16 @@ const status400 = (res, error,message="Something went worng while processing the
         message
     })
 }
+const status404 = (res, error,message="Not Found!") => {
+    res.status(404)
+    return res.send({
+        status:400,
+        data:null,
+        isError:true,
+        error,
+        message
+    })
+}
 const status501 = (res, error) => {
     res.status(501)
     return res.send({
@@ -32,4 +42,4 @@ const status501 = (res, error) => {
     })
 }
 
-module.exports = {status200, status400, status501}
+module.exports = {status200, status400, status404, status501}
